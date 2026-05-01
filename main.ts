@@ -41,10 +41,11 @@ namespace mqlib {
         let dspRect = 0
 
         // 主函数：初始化 + 循环运行
-        basic.forever(() => {
-            if (scanStatus == 0) {
-                return
-            }
+        // basic.forever(() => {
+        while (scanStatus == 1) {
+            // if (scanStatus == 0) {
+            //     return
+            // }
             if (xEnd != 0 && yEnd != 0) {
                 OLED12864_I2C.drawLine(
                     CENTER_X, CENTER_Y,
@@ -92,7 +93,7 @@ namespace mqlib {
 
             // 控制旋转速度
             basic.pause(SCAN_SPEED)
-        })
+        }
     }
     //% subcategory="oled"
     //% group='oled-雷达动画'
