@@ -11,7 +11,7 @@ namespace mqlib {
     const R3 = 31             // 最大圆半径
     const SCAN_LENGTH = R3    // 扫描线长度 = 最大外圈半径
     const SCAN_STEP = 1       // 扫描线点间隔
-    const SCAN_SPEED = 25     // 旋转速度（越小越快，ms）
+    const SCAN_SPEED = 250     // 旋转速度（越小越快，ms）
     const LINE_COLOR = 1      // 白色显示
     // 全局变量：扫描角度
     let scanAngle = 0
