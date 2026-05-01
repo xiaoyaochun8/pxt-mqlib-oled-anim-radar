@@ -23,7 +23,7 @@ namespace mqlib {
     export function oledRadarAnimStartSearch() {
         scanStatus = 1
         detectStatus = 0
-        OLED12864_I2C.init(60)
+        OLED12864_I2C.init(61)
         OLED12864_I2C.clear()
 
         // 1. 清屏
