@@ -11,7 +11,7 @@ namespace mqlib {
     const R3 = 31             // 最大圆半径
     const SCAN_LENGTH = R3    // 扫描线长度 = 最大外圈半径
     const SCAN_STEP = 1       // 扫描线点间隔
-    const SCAN_SPEED = 250     // 旋转速度（越小越快，ms）
+    const SCAN_SPEED = 1000     // 旋转速度（越小越快，ms）
     const LINE_COLOR = 1      // 白色显示
     // 全局变量：扫描角度
     let scanAngle = 0
@@ -41,11 +41,11 @@ namespace mqlib {
         let dspRect = 0
 
         // 主函数：初始化 + 循环运行
-        // basic.forever(() => {
-        while (scanStatus == 1) {
-            // if (scanStatus == 0) {
-            //     return
-            // }
+        basic.forever(() => {
+        // while (scanStatus == 1) {
+            if (scanStatus == 0) {
+                return
+            }
             if (xEnd != 0 && yEnd != 0) {
                 OLED12864_I2C.drawLine(
                     CENTER_X, CENTER_Y,
@@ -93,7 +93,7 @@ namespace mqlib {
 
             // 控制旋转速度
             basic.pause(SCAN_SPEED)
-        }
+        })
     }
     //% subcategory="oled"
     //% group='oled-雷达动画'
